@@ -2,6 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model: function() {
-		return this.store.find('friends');
+		var store = this.store;
+		var data = store.find('friends');
+		console.log("this results =======", data);
 	}
 });
