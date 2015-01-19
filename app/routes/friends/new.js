@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+	model: function() {
+		return this.store.createRecord('friend');
+	},
+
 	actions: {
 		save: function() {
 			console.log('+-- save action bubbled up to friends new route');
@@ -10,13 +14,5 @@ export default Ember.Route.extend({
 			console.log('+-- cancel action bubbled up to friends new route');
 			return true;
 		}
-	},
-
-	model: function() {
-		var store = this.store;
-		var data = store.find('friend');
-		console.log("this results =======", data);
-		return data;
 	}
-
 });
