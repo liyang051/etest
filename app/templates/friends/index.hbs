@@ -6,3 +6,15 @@
 <li>{{friend.id}} - {{friend.firstName}} {{friend.lastName}}</li>
 {{/each}}
 </ul>
+
+{{#each friend in model}}
+<li>
+    {{link-to friend.fullName 'friends.show' friend}}
+</li>
+{{/each}}
+
+<li>
+    {{#link-to 'application'}}
+      home
+    {{/link-to}}
+</li>
